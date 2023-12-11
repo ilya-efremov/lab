@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>lab8</title>
+</head>
+<body style="display: flex;">
+<div>
+
+<div class="block">
+<img src="picture.jpg" style="width: 250px; height: 150px;" alt="Фотограция">
+<div>
+<input type="file" class="file">
+<input type="button" value="Ввод" onclick="picChange(0)">
+</div>
+</div>
+<hr>
+<div class="block">
+<img src="picture.jpg" style="width: 250px; height: 150px;" alt="Фотография">
+<div>
+<input type="file" class="file">
+<input type="button" value="Ввод" onclick="picChange(1)">
+</div>
+</div>
+<hr>
+<div class="block">
+<img src="picture.jpg" style="width: 250px; height: 150px;" alt="Фотография">
+<div>
+<input type="file" class="file">
+<input type="button" value="Ввод" onclick="picChange(2)">
+</div>
+</div>
+<hr>
+<div>
+<p id="numofpics"></p>
+<p id="numoflinks"></p>
+</div>
+
+<a href="#">ссылка 1</a>
+<a href="#">ссылка 2</a>
+<a href="#">ссылка 3</a>
+<a href="#">ссылка 4</a>
+<a href="#">ссылка 5</a>
+</div>
+<script>
+
+(function calcul(){
+let picture = document.getElementById('numofpics');
+let link = document.getElementById('numoflinks');
+picture.innerText = `Кол-во картинок: ${document.images.length}`;
+link.innerText = `Кол-во ссылок: ${document.links.length}`;
+})()
+
+function picChange(num){
+let picture = document.images[num];
+let file = document.getElementsByClassName('file')[num];
+picture.src = file.files[0].name;
+}
+
+</script>
+</body>
+</html>
